@@ -1,0 +1,91 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.hero-section {
+  padding: 100px 20px;
+  background: linear-gradient(to right, #007BFF, #0056b3);
+  color: white;
+}
+
+.content-section {
+  margin: 50px 0;
+  padding: 40px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar */
+.navbar-nav .nav-link {
+  font-size: 16px;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107;
+}
+
+/* Gallery */
+.card {
+  transition: transform 0.3s ease-in-out;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #222;
+  color: white;
+  font-size: 14px;
+}
+
+/* Animations */
+.visible {
+  animation: fadeInUp 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Dot Graph */
+.dot-graph {
+  height: 200px;
+  background: repeating-linear-gradient(
+    to right,
+    transparent,
+    transparent 10px,
+    #ccc 10px,
+    #ccc 11px
+  );
+  margin-top: 30px;
+  position: relative;
+}
+
+.dot-graph::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #007BFF 2px, transparent 2px) repeat;
+  background-size: 20px 20px;
+  opacity: 0.8;
+}

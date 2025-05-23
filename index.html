@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commonwealth Games</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3 sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-4 text-warning" href="#">Commonwealth Games</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#history">History</a></li>
+        <li class="nav-item"><a class="nav-link" href="#purpose">Purpose</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nations">Nations</a></li>
+        <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+   <!-- Hero Section -->
+<header class="hero-section d-flex align-items-center justify-content-center text-center text-white">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Commonwealth Games 2022</h1>
+    <p class="lead">Celebrating Unity Through Sports in Birmingham</p>
+  </div>
+</header>
+
+
+  <!-- History Section -->
+  <section id="history" class="p-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">History & Origin</h2>
+      <ul>
+        <li>First held in 1930 in Hamilton, Canada.</li>
+        <li>Founded as the British Empire Games.</li>
+        <li>Now held every four years, involving 56 nations.</li>
+        <li>Focuses on promoting unity and sportsmanship.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Purpose Section -->
+  <section id="purpose" class="p-5">
+    <div class="container">
+      <h2 class="mb-4">Purpose of Commonwealth Games</h2>
+      <div class="row">
+        <div class="col-md-4">Promotes peace and cooperation among nations.</div>
+        <div class="col-md-4">Encourages athletic excellence and fair play.</div>
+        <div class="col-md-4">Supports developing nations in sport.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="p-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Commonwealth vs Olympic Games</h2>
+      <ul>
+        <li><strong>Participants:</strong> Commonwealth: 56 nations; Olympics: 206 nations</li>
+        <li><strong>Focus:</strong> Commonwealth includes para-sports in main event</li>
+        <li><strong>Governing Body:</strong> CGF vs IOC</li>
+        <li><strong>Languages & Culture:</strong> Commonwealth focuses on shared heritage</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Nations Section -->
+  <section id="nations" class="p-5">
+    <div class="container">
+      <h2 class="mb-4">Participating Nations</h2>
+      <div class="row">
+        <div class="col-md-3 mb-2">India</div>
+        <div class="col-md-3 mb-2">Australia</div>
+        <div class="col-md-3 mb-2">Canada</div>
+        <div class="col-md-3 mb-2">England</div>
+        <div class="col-md-3 mb-2">New Zealand</div>
+        <div class="col-md-3 mb-2">South Africa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="p-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Image Gallery</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="opening-ceremony-2022.jpg" class="card-img-top" alt="Birmingham-2022">
+            <div class="card-body"><p class="card-text">Birmingham-2022</p></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="world-athletics-image.jpg" class="card-img-top" alt="World-Athletics">
+            <div class="card-body"><p class="card-text">Athletics Championship</p></div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="wrestling-finals.jpg" class="card-img-top" alt="Commonwealth Games-India">
+            <div class="card-body"><p class="card-text">Wrestling Finals</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<h2 class="mb-4">Statistics & Analysis</h2>
+<div class="chart-container" style="position: relative; height:400px; width:100%;">
+  <canvas id="barChart"></canvas>
+</div>
+
+
+
+  <script>
+    new Chart(document.getElementById('pieChart'), {
+      type: 'pie',
+      data: {
+        labels: ['Athletics', 'Swimming', 'Boxing', 'Wrestling'],
+        datasets: [{ data: [30, 20, 25, 25], backgroundColor: ['red', 'blue', 'green', 'orange'] }]
+      }
+    });
+    new Chart(document.getElementById('barChart'), {
+      type: 'bar',
+      data: {
+        labels: ['India', 'Australia', 'Canada', 'England'],
+        datasets: [{ label: 'Gold Medals (2022)', data: [61, 67, 92, 176], backgroundColor: 'gold' }]
+      }
+    });
+    new Chart(document.getElementById('dotChart'), {
+      type: 'line',
+      data: {
+        labels: ['2010', '2014', '2018', '2022'],
+        datasets: [{ label: 'India Medal Tally', data: [101, 64, 66, 61], borderColor: 'blue', pointStyle: 'circle', pointRadius: 6, fill: false }]
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commonwealth Games</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Inline custom styling for layout */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    .hero-section {
+  height: 100vh;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/2/27/Birmingham2022_CWG_closing_ceremony.jpg') center center/cover no-repeat;
+  position: relative;
+  color: white;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* dim overlay */
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+    
+    .content-section {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease forwards;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .navbar-dark .navbar-nav .nav-link:hover {
+      color: #ffc107;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      transition: transform 0.3s ease-in-out;
+    }
+    #charts canvas {
+      margin: 20px;
+      display: block;
+    }
+    .form-control, .btn {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Commonwealth Games</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#history">History</a></li>
+          <li class="nav-item"><a class="nav-link" href="#purpose">Purpose</a></li>
+          <li class="nav-item"><a class="nav-link" href="#comparison">Comparison</a></li>
+          <li class="nav-item"><a class="nav-link" href="#nations">Nations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#stats">Stats</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+   <section id="stats" class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <canvas id="pieChart"></canvas>
+        </div>
+        <div class="col-md-4">
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="col-md-4">
+          <canvas id="dotChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <section id="contact" class="content-section">
+      <h2>Contact Us</h2>
+      <form action="/submit" method="POST">
+        <input name="name" type="text" placeholder="Your Name" required class="form-control mb-2" />
+        <input name="email" type="email" placeholder="Email" required class="form-control mb-2" />
+        <textarea name="message" class="form-control mb-2" placeholder="Message" required></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="text-center text-white bg-dark py-4">
+    &copy; 2025 Commonwealth Games. Designed for impact.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
